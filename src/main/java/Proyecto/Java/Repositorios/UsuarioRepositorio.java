@@ -30,7 +30,4 @@ public interface UsuarioRepositorio extends JpaRepository<UsuarioDAO, Long> {
 	Optional<UsuarioDAO> findByFoto(String foto);
 	Optional<UsuarioDAO> findByTipoUsuario(String tipoUsuario);*/
 	
-	
-	
-	
 }

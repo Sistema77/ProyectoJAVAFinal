@@ -88,13 +88,6 @@
 
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId> <!-- Coincide con la versión del spring-boot-starter-parent -->
-			</plugin>
-		</plugins>
-	</build>
+	
 
 </project>

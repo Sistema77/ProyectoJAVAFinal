@@ -25,19 +25,19 @@
 	</nav>
 	<div class="contenedor form-registro">
 		<p class="titulo">Registro</p>
-		<form class="form" th:action="@{/auth/registrar}" enctype="multipart/form-data" method="post" th:object="${usuarioDTO}">
-			<input type="text" id="nombreUsuario" name="nombreUsuario" class="input" placeholder="Nombre"
-				required th:value="*{nombreUsuario}">
-			<input type="text" id="apellidosUsuario" name="apellidosUsuario" class="input" placeholder="Apellidos"
-				required th:value="*{apellidosUsuario}">
-			<input type="text" id="dniUsuario" name="dniUsuario" class="input" placeholder="DNI" required
-				th:value="*{dniUsuario}">
-			<input type="text" id="tlfUsuario" name="tlfUsuario" class="input" placeholder="Telefono"
-				required th:value="*{tlfUsuario}">
-			<input type="email" id="emailUsuario" name="emailUsuario" class="input" placeholder="Email"
-				required th:value="*{emailUsuario}">
-			<input type="password" id="claveUsuario" name="claveUsuario" class="input" placeholder="Contraseña"
-				required th:value="*{claveUsuario}" oninput="revisarContraseña()">
+		<form class="form" th:action="@{/api/registrar}" enctype="multipart/form-data" method="post" th:object="${UsuarioDTO}">
+			<input type="text" id="name" name="name" class="input" placeholder="Nombre"
+				required th:value="*{name}">
+			<input type="text" id="last_name" name="last_name" class="input" placeholder="Apellidos"
+				required th:value="*{last_name}">
+			<input type="text" id="dni" name="dni" class="input" placeholder="DNI" required
+				th:value="*{dni}">
+			<input type="text" id="tlf" name="tlf" class="input" placeholder="Telefono"
+				required th:value="*{tlf}">
+			<input type="email" id="email" name="email" class="input" placeholder="Email"
+				required th:value="*{email}">
+			<input type="password" id="password" name="password" class="input" placeholder="Contraseña"
+				required th:value="*{password}" oninput="revisarContraseña()">
 			<input type="password" id="confirmarClaveUsuario" name="confirmarClaveUsuario" class="input"
 				placeholder="Confirmar Contraseña" required oninput="revisarContraseña()">
 			<button type="submit" id="btnRegistro" class="form-btn">Registrarse</button>
