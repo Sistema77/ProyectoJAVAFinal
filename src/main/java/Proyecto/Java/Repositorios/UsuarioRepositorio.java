@@ -14,7 +14,7 @@ public interface UsuarioRepositorio extends JpaRepository<UsuarioDAO, Long> {
 	 * @param dni
 	 * @return Usuario o null
 	 */
-	Optional<UsuarioDAO> findByDni(String dni);
+	public UsuarioDAO findByDni(String email);
 	
 	/**
 	 * Método que busca un usuario por Email en la base de datos y lo devuelve

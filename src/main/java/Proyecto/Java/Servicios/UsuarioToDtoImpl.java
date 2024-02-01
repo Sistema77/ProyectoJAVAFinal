@@ -28,6 +28,7 @@ public class UsuarioToDtoImpl implements IUsuarioToDto {
 			dto.setToken(u.getToken());
 			dto.setExpiracionToken(u.getExpiracionToken());
 			dto.setId_usuario(u.getId_usuario());
+			dto.setFch_alta(u.getFch_alta());
 			
 			return dto;
 		} catch (Exception e) {

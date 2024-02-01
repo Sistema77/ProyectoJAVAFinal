@@ -41,6 +41,9 @@ public class UsuarioDAO {
 	
 	@Column(name = "expiracionToken")
 	private Calendar expiracionToken;
+	
+	@Column(name = "fch_alta")
+	private Calendar fch_alta;
 
 	@Column(name = "foto")
 	private byte[] foto;
@@ -149,5 +152,14 @@ public class UsuarioDAO {
 	public void setExpiracionToken(Calendar expiracionToken) {
 		this.expiracionToken = expiracionToken;
 	}
+
+	public Calendar getFch_alta() {
+		return fch_alta;
+	}
+
+	public void setFch_alta(Calendar fch_alta) {
+		this.fch_alta = fch_alta;
+	}
+	
 	
 }

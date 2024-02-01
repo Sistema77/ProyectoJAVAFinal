@@ -20,12 +20,6 @@ public interface TransacionRepositorio extends JpaRepository<TransacionDAO, Long
 	 * @return Usuario o null
 	 */
 	Optional<TransacionDAO> findByFecha_Hora(String Fecha_Hora);
-	
-	
-	/*Optional<TransacionDAO> findByLastName(String lastName);
-	Optional<TransacionDAO> findByPassword(String password);
-	Optional<TransacionDAO> findByTlf(String tlf);
-	Optional<TransacionDAO> findByFoto(String foto);
-	Optional<TransacionDAO> findByTipoUsuario(String tipoUsuario);*/
+
 	
 }

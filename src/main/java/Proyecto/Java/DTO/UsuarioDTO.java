@@ -15,6 +15,7 @@ public class UsuarioDTO {
 	private String tipoUsuario;
 	private String token;
 	private Calendar expiracionToken;
+	private Calendar fch_alta;
 
 	// Constructor
 	public UsuarioDTO() {
@@ -123,4 +124,13 @@ public class UsuarioDTO {
 	public void setExpiracionToken(Calendar expiracionToken) {
 		this.expiracionToken = expiracionToken;
 	}
+
+	public Calendar getFch_alta() {
+		return fch_alta;
+	}
+
+	public void setFch_alta(Calendar fch_alta) {
+		this.fch_alta = fch_alta;
+	}
+	
 }

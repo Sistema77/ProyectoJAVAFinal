@@ -1,5 +1,7 @@
 package Proyecto.Java.Servicios;
 
+import java.util.Calendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,14 +21,39 @@ public class UsuarioServicioImpl implements IUsuarioServicio {
 
     @Override
     public UsuarioDTO registrar(UsuarioDTO usuarioDTO) {
-        //  encriptar la contraseña
-    	
     	try {
-    		Encriptacion nc = new Encriptacion();
-    		usuarioDTO.setPassword(nc.EncriptarContra(usuarioDTO.getPassword()));
-    	}catch(Exception e) {
-    		e.printStackTrace();
-    	}
+			// Comprueba si ya existe un usuario por el DNI
+			UsuarioDAO usuarioDNI = usuarioRepositorio.findByDni(usuarioDTO.getDni());
+
+			if (usuarioDNI != null) {
+				return null;
+			}
+			
+		//  encriptar la contraseña
+	    	try {
+	    		Encriptacion nc = new Encriptacion();
+	    		usuarioDTO.setPassword(nc.EncriptarContra(usuarioDTO.getPassword()));
+	    	}catch(Exception e) {
+	    		e.printStackTrace();
+	    	}
+
+			UsuarioDAO usuarioDao = toDao.usuarioToDao(userDto);
+			usuarioDao.setTipoUsuario("ROLE_USER");
+			usuarioDao.setFchAltaUsuario(Calendar.getInstance());
+			repositorio.save(usuarioDao);
+
+			return userDto;
+		} catch (IllegalArgumentException iae) {
+			System.out.println("[Error UsuarioServicioImpl - registrar() ]" + iae.getMessage());
+		} catch (Exception e) {
+			System.out.println("[Error UsuarioServicioImpl - registrar() ]" + e.getMessage());
+		}
+		return null;
+    	
+    	
+    	///////////////////////////////////////////////////////////////////////////////////////
+    	
+    	
     	
         // Convierte el UsuarioDTO a UsuarioDAO
         UsuarioDAO usuarioDAO = usuarioToDao.usuarioToDao(usuarioDTO);
