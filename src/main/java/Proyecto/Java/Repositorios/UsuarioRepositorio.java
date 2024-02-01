@@ -2,6 +2,8 @@ package Proyecto.Java.Repositorios;
 
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import Proyecto.Java.DAO.UsuarioDAO;
 
@@ -24,10 +26,7 @@ public interface UsuarioRepositorio extends JpaRepository<UsuarioDAO, Long> {
 	
 	Optional<UsuarioDAO> findByName(String name);
 	
-	/*Optional<UsuarioDAO> findByLastName(String lastName);
-	Optional<UsuarioDAO> findByPassword(String password);
-	Optional<UsuarioDAO> findByTlf(String tlf);
-	Optional<UsuarioDAO> findByFoto(String foto);
-	Optional<UsuarioDAO> findByTipoUsuario(String tipoUsuario);*/
+	@Query("SELECT u FROM usuario u WHERE u.id = :id")
+    Optional<UsuarioDAO> findByIdCustom(@Param("id") Long id);
 	
 }

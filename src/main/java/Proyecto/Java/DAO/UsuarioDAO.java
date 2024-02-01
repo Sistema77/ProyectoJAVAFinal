@@ -1,4 +1,5 @@
 package Proyecto.Java.DAO;
+import java.util.Calendar;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -34,6 +35,12 @@ public class UsuarioDAO {
 
 	@Column(name = "tlf")
 	private String tlf;
+	
+	@Column(name = "token")
+	private String token;
+	
+	@Column(name = "expiracionToken")
+	private Calendar expiracionToken;
 
 	@Column(name = "foto")
 	private byte[] foto;
@@ -126,4 +133,21 @@ public class UsuarioDAO {
 	public void setCuentas(List<CuentaDAO> cuentas) {
 		this.cuentas = cuentas;
 	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+	public Calendar getExpiracionToken() {
+		return expiracionToken;
+	}
+
+	public void setExpiracionToken(Calendar expiracionToken) {
+		this.expiracionToken = expiracionToken;
+	}
+	
 }

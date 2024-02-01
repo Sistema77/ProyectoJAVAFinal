@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href="../static/css/menu.css" th:href="@{/css/menu.css}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" th:src="@{/webjars/jquery/jquery.min.js}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<script th:src="@{/script/script.js}"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.2/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </head>
 <body>
@@ -37,20 +36,10 @@
 			<input type="email" id="email" name="email" class="input" placeholder="Email"
 				required th:value="*{email}">
 			<input type="password" id="password" name="password" class="input" placeholder="Contraseña"
-				required th:value="*{password}" oninput="revisarContraseña()">
-			<input type="password" id="confirmarClaveUsuario" name="confirmarClaveUsuario" class="input"
-				placeholder="Confirmar Contraseña" required oninput="revisarContraseña()">
+				required th:value="*{password}">
 			<button type="submit" id="btnRegistro" class="form-btn">Registrarse</button>
-			<div class="mensajeContrasenya" id="mensajeContrasenya"></div>
 		</form>
 	</div>
-
-	<script th:if="${not #strings.isEmpty(mensajeErrorDni)}">
-	    mostrarNotificacion("¡Error!", "Ya se encuentra registrado un usuario con ese DNI", 'error');
-	</script>
-	<script th:if="${not #strings.isEmpty(mensajeErrorMail)}">
-	    mostrarNotificacion("¡Error!", "El email ya se encuentra registrado en el sistema", 'error');
-	</script>
 </body>
 
 </html>

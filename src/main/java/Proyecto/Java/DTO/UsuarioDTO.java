@@ -1,9 +1,6 @@
 package Proyecto.Java.DTO;
+import java.util.Calendar;
 import java.util.List;
-
-
-
-
 public class UsuarioDTO {
 
 	// Atributos
@@ -16,6 +13,8 @@ public class UsuarioDTO {
 	private String tlf;
 	private byte[] foto;
 	private String tipoUsuario;
+	private String token;
+	private Calendar expiracionToken;
 
 	// Constructor
 	public UsuarioDTO() {
@@ -109,4 +108,19 @@ public class UsuarioDTO {
 		this.tipoUsuario = tipoUsuario;
 	}
 
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+	public Calendar getExpiracionToken() {
+		return expiracionToken;
+	}
+
+	public void setExpiracionToken(Calendar expiracionToken) {
+		this.expiracionToken = expiracionToken;
+	}
 }
