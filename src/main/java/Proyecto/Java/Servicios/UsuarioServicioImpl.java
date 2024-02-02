@@ -37,31 +37,17 @@ public class UsuarioServicioImpl implements IUsuarioServicio {
 	    		e.printStackTrace();
 	    	}
 
-			UsuarioDAO usuarioDao = toDao.usuarioToDao(userDto);
+			UsuarioDAO usuarioDao = usuarioToDao.usuarioToDao(usuarioDTO);
 			usuarioDao.setTipoUsuario("ROLE_USER");
-			usuarioDao.setFchAltaUsuario(Calendar.getInstance());
-			repositorio.save(usuarioDao);
+			usuarioDao.setFch_alta(Calendar.getInstance());
+			usuarioRepositorio.save(usuarioDao);
 
-			return userDto;
+			return usuarioDTO;
 		} catch (IllegalArgumentException iae) {
 			System.out.println("[Error UsuarioServicioImpl - registrar() ]" + iae.getMessage());
 		} catch (Exception e) {
 			System.out.println("[Error UsuarioServicioImpl - registrar() ]" + e.getMessage());
 		}
 		return null;
-    	
-    	
-    	///////////////////////////////////////////////////////////////////////////////////////
-    	
-    	
-    	
-        // Convierte el UsuarioDTO a UsuarioDAO
-        UsuarioDAO usuarioDAO = usuarioToDao.usuarioToDao(usuarioDTO);
-
-        // Guarda el usuario en la base de datos
-        usuarioDAO = usuarioRepositorio.save(usuarioDAO);
-
-        // Devuelve el UsuarioDTO resultante (podrías devolver solo los datos necesarios)
-        return usuarioToDto.usuarioToDto(usuarioDAO);
     }
 }
