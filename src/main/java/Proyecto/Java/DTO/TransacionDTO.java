@@ -1,12 +1,12 @@
 package Proyecto.Java.DTO;
 
-import java.util.Date;
+import java.util.Calendar;
 
 public class TransacionDTO {
 	
 	private Long id_trasaciones;
 	private Double cantidadDinero;
-	private Date Fecha_Hora;
+	private Calendar fecha_Hora;
 
 
 	public TransacionDTO() {
@@ -28,12 +28,12 @@ public class TransacionDTO {
 		this.cantidadDinero = cantidadDinero;
 	}
 
-	public Date getFecha_Hora() {
-		return Fecha_Hora;
+	public Calendar getFecha_Hora() {
+		return fecha_Hora;
 	}
 
-	public void setFecha_Hora(Date fecha_Hora) {
-		Fecha_Hora = fecha_Hora;
+	public void setFecha_Hora(Calendar fecha_Hora) {
+		fecha_Hora = fecha_Hora;
 	}
 	
 }

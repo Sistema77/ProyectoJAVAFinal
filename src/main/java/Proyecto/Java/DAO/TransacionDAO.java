@@ -1,6 +1,7 @@
 package Proyecto.Java.DAO;
 
-import java.util.Date;
+
+import java.util.Calendar;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,8 +24,8 @@ public class TransacionDAO {
 	@Column(name = "cantidadDinero")
 	private Double cantidadDinero;
 
-	@Column(name = "Fecha_Hora")
-	private Date Fecha_Hora;
+	@Column(name = "fecha_Hora")
+	private Calendar fecha_Hora;
 
 	@ManyToOne
 	@JoinColumn(name = "cuentaEnvia")
@@ -53,12 +54,12 @@ public class TransacionDAO {
 		this.cantidadDinero = cantidadDinero;
 	}
 
-	public Date getFecha_Hora() {
-		return Fecha_Hora;
+	public Calendar getFecha_Hora() {
+		return fecha_Hora;
 	}
 
-	public void setFecha_Hora(Date fecha_Hora) {
-		Fecha_Hora = fecha_Hora;
+	public void setFecha_Hora(Calendar fecha_Hora) {
+		this.fecha_Hora = fecha_Hora;
 	}
 
 	public CuentaDAO getCuentaEnvia() {

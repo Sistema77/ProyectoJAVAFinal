@@ -1,5 +1,6 @@
 package Proyecto.Java.Repositorios;
 
+import java.util.Calendar;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -12,14 +13,13 @@ public interface TransacionRepositorio extends JpaRepository<TransacionDAO, Long
 	 * @param dni
 	 * @return Usuario o null
 	 */
-	Optional<TransacionDAO> findByCantidadDinero(String cantidadDinero);
-	
+	Optional<TransacionDAO> findByCantidadDinero(Double cantidadDinero);
+
 	/**
 	 * Método que busca un usuario por Email en la base de datos y lo devuelve
 	 * @param email
 	 * @return Usuario o null
 	 */
-	Optional<TransacionDAO> findByFecha_Hora(String Fecha_Hora);
-
+	Optional<TransacionDAO> findByFecha_Hora(Calendar fecha_Hora);
 	
 }

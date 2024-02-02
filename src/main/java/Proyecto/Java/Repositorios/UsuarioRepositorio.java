@@ -26,7 +26,4 @@ public interface UsuarioRepositorio extends JpaRepository<UsuarioDAO, Long> {
 	
 	Optional<UsuarioDAO> findByName(String name);
 	
-	@Query("SELECT u FROM usuario u WHERE u.id = :id")
-    Optional<UsuarioDAO> findByIdCustom(@Param("id") Long id);
-	
 }
